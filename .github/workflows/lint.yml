@@ -14,11 +14,9 @@ jobs:
     steps:
       - name: Checkout Git Repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
 
       - name: Set Up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -26,6 +24,4 @@ jobs:
         run: npm ci
 
       - name: Run Linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
+        run: npm run lint
