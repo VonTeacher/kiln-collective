@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import MobileMenu from "./mobileMenu";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -10,14 +11,7 @@ const Header = () => {
 
   return (
     <header className="container flex flex-col border-b border-black">
-      <div
-        id="mobile-menu"
-        className={`fixed top-[57px] h-full w-full bg-red-200 text-center transition duration-500 sm:hidden ${
-          isMenuOpen ? "" : "-translate-x-full"
-        }`}
-      >
-        mobile nav text here
-      </div>
+      <MobileMenu isOpen={isMenuOpen} />
       <div className="order-1 flex flex-row items-center justify-between p-2 text-center">
         <div className="flex-grow text-4xl">Kiln Collective</div>
         <div className="mr-2 sm:hidden" onClick={toggleMenu}>
