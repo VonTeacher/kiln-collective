@@ -1,3 +1,4 @@
+import { getSortedMembersData } from "@/lib/members";
 import { Albert_Sans } from "next/font/google";
 
 const albertSans = Albert_Sans({
@@ -5,12 +6,31 @@ const albertSans = Albert_Sans({
   weight: ["400", "700"],
 });
 
-export default function Home() {
+interface HomeProps {
+  allMembersData: Member[];
+}
+
+interface Member {
+  firstName: string;
+}
+
+const Home = (props: HomeProps) => {
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between ${albertSans.className}`}
     >
-      kiln collective &trade;
+      Kiln Collective index.tsx &trade;
     </main>
   );
-}
+};
+
+export const getStaticProps = async () => {
+  const allMembersData = getSortedMembersData();
+  return {
+    props: {
+      allMembersData,
+    },
+  };
+};
+
+export default Home;
