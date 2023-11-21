@@ -18,7 +18,7 @@ const Header = ({ allMembersData }: HeaderProps) => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="fixed left-0 right-0 top-0 flex flex-col border-b border-black bg-white">
+    <header className="max-h-nav-height fixed left-0 right-0 top-0 flex flex-col border-b border-black bg-white">
       <MobileMenu isOpen={isMenuOpen} members={allMembersData} />
       <TitleBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>
