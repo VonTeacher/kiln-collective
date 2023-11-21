@@ -3,10 +3,10 @@ import Header from "./Header";
 
 const RootLayout = ({ children }: { children: ReactElement }) => {
   return (
-    <div className="mx-auto">
+    <div className="relative mx-auto">
       <Header allMembersData={children.props.allMembersData} />
       {children}
-      <div>This is a footer div</div>
+      <p>here&apos;s some text so I cans croll the page not the screen</p>
     </div>
   );
 };
