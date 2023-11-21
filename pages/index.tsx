@@ -17,7 +17,7 @@ interface Member {
 const Home = (props: HomeProps) => {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between ${albertSans.className}`}
+      className={`mt-nav-height flex min-h-screen flex-col items-center justify-between ${albertSans.className}`}
     >
       Kiln Collective index.tsx &trade;
     </main>
