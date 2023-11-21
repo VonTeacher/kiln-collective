@@ -4,7 +4,7 @@ import Header from "./Header";
 const RootLayout = ({ children }: { children: ReactElement }) => {
   return (
     <div className="mx-auto max-w-sm">
-      <Header />
+      <Header allMembersData={children.props.allMembersData} />
       {children}
       <div>This is a footer div</div>
     </div>
